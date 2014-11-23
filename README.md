@@ -1,3 +1,3 @@
 # Personal Website
 
-See <a href="alexandremoureaux.com">alexandremoureaux.com</a>
+See <a href="http://alexandremoureaux.com">alexandremoureaux.com</a>
