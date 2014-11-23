@@ -5,6 +5,8 @@ var sass = require('gulp-sass');
 var jade = require('gulp-jade');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
 
 var paths = {
   server: {
@@ -24,6 +26,13 @@ var paths = {
 
 var browser = "firefox";
 var url = "http://localhost:5000";
+
+gulp.task('browser-sync', function() {
+    browserSync({
+      files: "public/**/*",
+      proxy: "localhost:5000"
+    });
+});
 
 gulp.task('sass', function(done) {
   gulp.src(paths.client.sass)
@@ -67,4 +76,4 @@ gulp.task('server', function(){
   server({script: paths.server.index});
 });
 
-gulp.task('serve', ['server', 'templates', 'open', 'watch']);
+gulp.task('serve', ['server', 'templates', 'watch', 'browser-sync']);
