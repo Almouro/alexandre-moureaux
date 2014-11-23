@@ -1,0 +1,7 @@
+{
+  "name": "Alexandre Moureaux",
+  "description": "Alexandre Moureaux - Personal Website",
+  "repository": "https://github.com/Almouro/alexandre-moureaux",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "static"]
+}

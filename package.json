@@ -1,0 +1,37 @@
+{
+  "name": "Alexandre-Moureaux",
+  "version": "0.0.1",
+  "description": "Alexandre Moureaux Website",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "~4.9.x",
+    "jade": "1.7.0"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Almouro/alexandre-moureaux"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^1.7.0",
+    "gulp": "^3.8.10",
+    "gulp-jade": "^0.9.0",
+    "gulp-minify-css": "^0.3.11",
+    "gulp-nodemon": "^1.0.4",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^1.1.0",
+    "main-bower-files": "^2.4.0",
+    "open": "0.0.5"
+  }
+}
