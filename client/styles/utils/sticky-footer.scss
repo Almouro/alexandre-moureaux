@@ -1,0 +1,11 @@
+$footerHeight: 116px;
+
+body{
+  padding-bottom: $footerHeight;
+}
+
+footer, .footer{
+  position: absolute;
+  bottom: 0;
+  height: $footerHeight;
+}

@@ -1,0 +1,7 @@
+body {
+  padding-bottom: 116px; }
+
+footer, .footer {
+  position: absolute;
+  bottom: 0;
+  height: 116px; }

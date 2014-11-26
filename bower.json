@@ -1,0 +1,34 @@
+{
+  "name": "Almouro",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Almouro/alexandre-moureaux",
+  "authors": [
+    "Almouro <contact@almouro.com>"
+  ],
+  "description": "Personal Website",
+  "main": "app.js",
+  "keywords": [
+    "Node",
+    "Angular",
+    "Bootstrap",
+    "Heroku"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "~0.2.13"
+  },
+  "overrides": {
+      "angular-ui-router": {
+        "dependencies": null
+      }
+    }
+}
