@@ -1,31 +1,14 @@
 
-<div class="jumbotron header">
+<div class="jumbotron header home">
   <section itemscope="itemscope" itemtype="http://data-vocabulary.org/Person" class="container">
     <h1 itemprop="name">Alexandre Moureaux</h1>
-    <h3 itemprop="role">Christian. Future Software Engineer. Aspiring Music Composer.</h3>
+    <h2 itemprop="role" class="fonctions">
+      <div ui-sref="christian" class="link">Christian.</div>
+      <div ui-sref="software" class="link">Future Software Engineer.</div>
+      <div ui-sref="music" class="link">Aspiring Music Composer.</div>
+    </h2>
     <meta itemprop="url" content="alexandremoureaux.com"/><span itemprop="address" itemscope="itemscope" itemtype="http://data-vocabulary.org/Address">
       <meta itemprop="country-name" content="France"/></span>
   </section>
-</div>
-<div ng-controller="HomeController" class="container central-container">
-  <button type="button" data-placement="bottom" data-animation="am-flip-x" bs-popover="popover" class="btn btn-lg btn-primary">Click to toggle popover<br/><small>(using an object)</small></button>
-  <div ng-model="tabs.activeTab" bs-tabs="bs-tabs">
-    <div ng-repeat="tab in tabs" title="{{ tab.title }}" ng-bind="tab.content" bs-pane="bs-pane"></div>
-  </div>
-  <h4>This website is under construction. In the meantime here's my contact info.</h4><br/>
-  <div class="row">
-    <div class="col-xs-12 col-md-6 col-md-offset-1 social">
-      <div class="row row-padding-bottom"><a href="https://www.linkedin.com/in/alexandremoureaux/">
-          <div class="col-xs-2"><img src="assets/img/linkedin.png" alt="Linkedin" width="64" height="64"/></div>
-          <div class="col-xs-10">See my LinkedIn profile</div></a></div>
-      <div class="row row-padding-bottom"><a href="skype:alexandre.moureaux?chat">
-          <div class="col-xs-2"><img src="assets/img/skype.png" alt="Skype" width="64" height="64"/></div>
-          <div class="col-xs-10">alexandre.moureaux</div></a></div>
-      <div class="row row-padding-bottom"><a href="mailto:hi@alexandremoureaux.com">
-          <div class="col-xs-2"><img src="assets/img/emailcopy.png" width="64" height="64"/></div>
-          <div class="col-xs-10">hi@alexandremoureaux.com</div></a></div>
-    </div>
-    <!--.col-xs-12.col-md-6-->
-  </div>
 </div>
 <footer-almouro></footer-almouro>

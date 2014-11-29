@@ -1,8 +1,14 @@
 $footerHeight: 116px;
 
-.footer-parent{
+.footer-parent, [ui-view]{
   position: relative;
   padding-bottom: $footerHeight;
+  min-height: 100%;
+}
+
+.snap-content{
+  min-height: 100%;
+  padding-bottom: 0;
 }
 
 footer, .footer{

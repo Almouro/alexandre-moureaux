@@ -4,15 +4,15 @@
 
 html{
 	min-height: 100%;
-	min-width: 480px;
 	position: relative;
   padding: 0;
   margin: 0;
+  font-size: 1em;
 }
 
 body{
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 2em;
+  font-size: 1em;
 }
 
 snap-content{
@@ -23,13 +23,21 @@ snap-content{
 	height: auto;
 }
 
+h1{
+  font-size: 3.4em;
+}
+
+h2{
+  font-size: 2.2em;
+}
+/* 
 h3{
 	font-size: 2.7em;
 }
 
 h4{
 	font-size: 2.3em;
-}
+} */
 
 .central-container{
 	padding: 30px;
@@ -40,10 +48,20 @@ h4{
 	margin-bottom: 0px;
 }
 
+.header.home{
+  min-height: 100%;
+}
+
 .header{
 	background-color: #4393B9;
 	color: white;
 	text-align: center;
+}
+
+@media screen and (max-width: 768px){
+  .header{
+    padding-top: 70px;
+  }
 }
 
 .footer{
@@ -56,17 +74,76 @@ h4{
 	padding-bottom: 10px;
 }
 
+a, a:hover{
+  text-decoration: none;
+}
+
+.link{
+  cursor: pointer;
+}
+
+.fonctions{
+  div{
+    display: inline-block;
+  }
+}
+
+.tech-used{
+  font-size: 2em;
+
+  @media screen and (max-width: 768px){
+    text-align: center;
+  }
+
+  @media screen and (min-width: 768px){
+    .tech-name{
+      display: inline;
+    }
+  }
+}
+
 .social{
-	//line-height: 4.6em;
+  
+  font-size: 2em;
+
+  @media screen and (max-width: 768px){
+    $imageSize: 48px;
+    .row{
+      line-height: $imageSize;
+    }
+    img{
+      width: $imageSize;
+      height: $imageSize;
+    }
+  }
+
+  @media screen and (min-width: 768px){
+    $imageSize: 64px;
+    .row{
+      line-height: $imageSize;
+    }
+  	img{
+      width: $imageSize;
+      height: $imageSize;
+    }
+  }
 }
 
 burger{
 	color: white;
-  font-size: 3.8em;
   position: absolute;
   z-index: 1;
   margin: 0 20px;
   cursor: pointer;
+  font-size: 1.9em;
+
+  span{
+    vertical-align: middle;
+  }
+  
+  .burger-icon{
+    font-size: 1.8em;
+  }
 }
 
 side-menu{
@@ -75,7 +152,6 @@ side-menu{
 
   .link{
     opacity: 0.7;
-    cursor: pointer;
   }
 
   .link:not(.current-state):hover{

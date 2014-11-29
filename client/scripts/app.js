@@ -3,31 +3,41 @@
 (function(){
   var app = angular.module('almouro', ['mgcrea.ngStrap', 'ngAnimate', 'ui.router', 'snap']);
 
-  app.controller('MainController', function($scope, snapRemote, $rootScope, $timeout){
-    var ENTERING_PAGE_DURATION = 1000;
-    var snapper;
-    var closeSnapperTimeout;
+  app.controller('MainController', function($scope, snapRemote, $rootScope, $timeout, $window){
+    (function snapperHandler(){
+      var ENTERING_PAGE_DURATION = 1200;
+      var snapper;
+      var closeSnapperTimeout;
 
-    var closeSnapper = function(){
-      snapper.close();
-    };
+      var closeSnapper = function(){
+        snapper.close();
+      };
 
-    snapRemote.getSnapper().then(function(snapper_) {
-      snapper = snapper_;
+      function isSmallScreen(){
+        return $window.innerWidth < 768;
+      }
 
-      $rootScope.$on('$stateChangeSuccess', function(){
-        $timeout.cancel(closeSnapperTimeout);
-        closeSnapperTimeout = $timeout(closeSnapper, ENTERING_PAGE_DURATION);
+      snapRemote.getSnapper().then(function(snapper_) {
+        snapper = snapper_;
+
+        $rootScope.$on('$stateChangeStart', function(){
+          $timeout.cancel(closeSnapperTimeout);
+        });
+
+        $rootScope.$on('$stateChangeSuccess', function(){
+          if(isSmallScreen()) closeSnapper();
+          else closeSnapperTimeout = $timeout(closeSnapper, ENTERING_PAGE_DURATION);
+        });
+
+        snapper.on('open', function() {
+          $timeout.cancel(closeSnapperTimeout);
+        });
+        
+        snapper.on('close', function() {
+          //
+        });
       });
-
-      snapper.on('open', function() {
-        $timeout.cancel(closeSnapperTimeout);
-      });
-      
-      snapper.on('close', function() {
-        //
-      });
-    });
+    })();
   });
 
   app.controller('HomeController', function($scope){

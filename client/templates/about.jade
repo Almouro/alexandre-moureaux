@@ -1,24 +1,32 @@
 include ./includes/common.jade
 
-.container
-  h1 This website:
+.about
+  .jumbotron.header
+    section.container
+      h1 About this site
 
-  div
-    a(href="https://github.com/Almouro/alexandre-moureaux")
-      img.img-responsive(src="#{IMG_DIR}/github.png")
-      span has a public repository on Github
+  .container
+    h2 This website:
 
-  div
-    a(href="https://heroku.com")
-      span is hosted on 
-      img(src="#{IMG_DIR}/heroku.png")
+    .col-xs-12.col-sm-11.col-sm-offset-1.col-md-10.col-md-offset-2.tech-used
+      .row.row-padding-bottom
+        a(href="https://github.com/Almouro/alexandre-moureaux")
+          .tech-name  has a public repository on Github 
+          img(src="#{IMG_DIR}/github.png", height="70px")
 
-  div
-    a(href="http://nodejs.org/")
-      span is served by 
-      img(src="#{IMG_DIR}/nodejs.png")
+      .row.row-padding-bottom
+        a(href="https://heroku.com")
+          .tech-name is hosted on 
+          img(src="#{IMG_DIR}/heroku.png", height="70px")
 
-  div
-    a(href="https://angularjs.org/")
-      span is built with 
-      img(src="#{IMG_DIR}/angular.png")
+      .row.row-padding-bottom
+        a(href="http://nodejs.org/")
+          .tech-name is served by 
+          img(src="#{IMG_DIR}/nodejs.png", height="70px")
+
+      .row.row-padding-bottom
+        a(href="https://angularjs.org/")
+          .tech-name is built with 
+          img(src="#{IMG_DIR}/angular.png", height="70px")
+
+  footer-almouro
