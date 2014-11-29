@@ -24,11 +24,12 @@
     "tests"
   ],
   "dependencies": {
-    "angular-ui-router": "~0.2.13"
+    "angular-ui-router": "~0.2.13",
+    "angular-snap": "~1.6.0"
   },
   "overrides": {
-      "angular-ui-router": {
-        "dependencies": null
-      }
+    "angular-ui-router": {
+      "dependencies": null
     }
+  }
 }

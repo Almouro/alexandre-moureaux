@@ -1,0 +1,18 @@
+mixin side-menu-link(state)
+  .link(ui-sref=state, ng-class="{'current-state': getState()==='" + state + "'}")
+    if block
+      block
+
+div
+  +side-menu-link('home') Home
+div
+  +side-menu-link('christian') Christian
+div
+  +side-menu-link('software') Software
+div
+  +side-menu-link('music') Music
+div
+  +side-menu-link('contact') Contact
+div
+  +side-menu-link('about')
+    span About

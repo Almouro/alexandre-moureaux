@@ -10,7 +10,7 @@ module.exports = function(app) {
 
 	app.route('/')
 	.get(function(req, res) {
-		res.sendFile(require('path').normalize(__dirname + '/..') + '/public/index.html');
+		res.sendFile(require('path').normalize(__dirname + '/..') + '/public/views/index.html');
 	});
 
 	app.get('/404', function(req, res, next){

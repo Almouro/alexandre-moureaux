@@ -1,6 +1,7 @@
 $footerHeight: 116px;
 
-body{
+.footer-parent{
+  position: relative;
   padding-bottom: $footerHeight;
 }
 

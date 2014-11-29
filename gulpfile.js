@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp');
 var server = require('gulp-nodemon');
 var open = require('open');
@@ -9,31 +11,46 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var mainBowerFiles = require('main-bower-files');
 var uglify = require('gulp-uglify');
+var del = require('del');
+
+var PUBLIC_DIR = './public';
+var CLIENT_DIR = './client'
 
 var paths = {
   server: {
     index: './app.js',
   },
   client: {
-  	sass: ['./client/styles/**/*.scss'],
-  	jade: ['./client/templates/**/*.jade'],
-  	scripts: ['./client/scripts/**/*.js'],
-    bower: './client/scripts/libs/'
+    watch:{
+      sass: [CLIENT_DIR + '/styles/**/*.scss'],
+      jade: [CLIENT_DIR + '/templates/**/*.jade']
+    },
+  	sass: [CLIENT_DIR + '/styles/index.scss'],
+  	jade: [CLIENT_DIR + '/templates/*.jade', CLIENT_DIR + '/templates/directives/*.jade'],
+  	scripts: [CLIENT_DIR + '/scripts/**/*.js'],
+    bower: CLIENT_DIR + '/scripts/libs/'
   },
   public: {
-  	dir: './public',
-  	css: './public/css',
-  	scripts: './public/js'
+  	dir: PUBLIC_DIR,
+  	css: PUBLIC_DIR + '/css',
+  	scripts: PUBLIC_DIR + '/js',
+    libs: PUBLIC_DIR + '/libs'
   }
 };
 
 var browser = "firefox";
 var url = "http://localhost:5000";
 
+gulp.task('clean', function(){
+  del([paths.public.dir + '/**/*', '!'+ paths.public.dir +'/{assets,assets/**}'], function (err) {
+    if(err) console.log(err);
+  });
+});
+
 gulp.task('browser-sync', function() {
     browserSync({
-      files: "public/**/*",
-      proxy: "localhost:5000"
+      files: paths.public.dir + "/**/*",
+      proxy: url
     });
 });
 
@@ -66,7 +83,7 @@ gulp.task('bower', function() {
         }
       }
     }))
-      .pipe(gulp.dest(paths.client.bower));
+      .pipe(gulp.dest(paths.public.libs));
 });
 
 gulp.task('javascript', function (done) {
@@ -80,8 +97,8 @@ gulp.task('javascript', function (done) {
 gulp.task('templates', ['sass', 'jade', 'bower', 'javascript']);
 
 gulp.task('watch', function() {
-  gulp.watch(paths.client.sass, ['sass']);
-  gulp.watch(paths.client.jade, ['jade']);
+  gulp.watch(paths.client.watch.sass, ['sass']);
+  gulp.watch(paths.client.watch.jade, ['jade']);
   gulp.watch(paths.client.scripts, ['javascript']);
 });
 

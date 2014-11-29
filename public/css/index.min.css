@@ -1,4 +1,5 @@
-body {
+.footer-parent {
+  position: relative;
   padding-bottom: 116px; }
 
 footer, .footer {
@@ -6,24 +7,136 @@ footer, .footer {
   bottom: 0;
   height: 116px; }
 
+.snap-drawers {
+  background-color: black; }
+
+.snap-drawer {
+  padding: 20px; }
+
+@-webkit-keyframes fadeIn_0_100 {
+  from {
+    opacity: 0; }
+
+  to {
+    opacity: 1; } }
+
+@-moz-keyframes fadeIn_0_100 {
+  from {
+    opacity: 0; }
+
+  to {
+    opacity: 1; } }
+
+@keyframes fadeIn_0_100 {
+  from {
+    opacity: 0; }
+
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes fadeIn_70_100 {
+  from {
+    opacity: 0.7; }
+
+  to {
+    opacity: 1; } }
+
+@-moz-keyframes fadeIn_70_100 {
+  from {
+    opacity: 0.7; }
+
+  to {
+    opacity: 1; } }
+
+@keyframes fadeIn_70_100 {
+  from {
+    opacity: 0.7; }
+
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes fadeIn_100_70 {
+  from {
+    opacity: 1; }
+
+  to {
+    opacity: 0.7; } }
+
+@-moz-keyframes fadeIn_100_70 {
+  from {
+    opacity: 1; }
+
+  to {
+    opacity: 0.7; } }
+
+@keyframes fadeIn_100_70 {
+  from {
+    opacity: 1; }
+
+  to {
+    opacity: 0.7; } }
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
+
+[ui-view].ng-enter {
+  opacity: 0;
+  -webkit-animation: fadeIn_0_100 0.85s ease-in;
+  -moz-animation: fadeIn_0_100 0.85s ease-in;
+  animation: fadeIn_0_100 0.85s ease-in;
+  /* -webkit-transform:scale3d(0.5, 0.5, 0.5);
+  -moz-transform:scale3d(0.5, 0.5, 0.5);
+  transform:scale3d(0.5, 0.5, 0.5); */ }
+
+[ui-view].ng-enter-active {
+  opacity: 1;
+  /* -webkit-transform:scale3d(1, 1, 1);
+  -moz-transform:scale3d(1, 1, 1);
+  transform:scale3d(1, 1, 1); */ }
+
+[ui-view].ng-leave {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+[ui-view].ng-leave-active {
+  opacity: 0;
+  -webkit-transform: translate3d(100px, 0, 0);
+  -moz-transform: translate3d(100px, 0, 0);
+  transform: translate3d(100px, 0, 0); }
+
 html {
   min-height: 100%;
-  font-size: 52px;
   min-width: 480px;
-  position: relative; }
+  position: relative;
+  padding: 0;
+  margin: 0; }
 
 body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 2em; }
+
+snap-content {
   background-color: #DFE2DB; }
 
+.body {
+  height: auto; }
+
 h3 {
-  font-size: 38px; }
+  font-size: 2.7em; }
 
 h4 {
-  font-size: 32px; }
+  font-size: 2.3em; }
 
-.body {
+.central-container {
   padding: 30px;
-  font-size: 28px;
   color: #555; }
 
 .jumbotron {
@@ -42,41 +155,26 @@ h4 {
 .row-padding-bottom {
   padding-bottom: 10px; }
 
-.social {
-  line-height: 64px; }
-
-[ui-view].ng-enter, [ui-view].ng-leave {
+burger {
+  color: white;
+  font-size: 3.8em;
   position: absolute;
-  left: 0;
-  right: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
+  z-index: 1;
+  margin: 0 20px;
+  cursor: pointer; }
 
-[ui-view].ng-enter {
-  opacity: 0;
-  -webkit-transform: scale3d(0.5, 0.5, 0.5);
-  -moz-transform: scale3d(0.5, 0.5, 0.5);
-  transform: scale3d(0.5, 0.5, 0.5); }
-
-[ui-view].ng-enter-active {
-  opacity: 1;
-  -webkit-transform: scale3d(1, 1, 1);
-  -moz-transform: scale3d(1, 1, 1);
-  transform: scale3d(1, 1, 1); }
-
-[ui-view].ng-leave {
-  opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0); }
-
-[ui-view].ng-leave-active {
-  opacity: 0;
-  -webkit-transform: translate3d(100px, 0, 0);
-  -moz-transform: translate3d(100px, 0, 0);
-  transform: translate3d(100px, 0, 0); }
-
-[ui-view] {
-  height: 100px; }
+side-menu {
+  font-size: 2em;
+  color: white; }
+  side-menu .link {
+    opacity: 0.7;
+    cursor: pointer; }
+  side-menu .link:not(.current-state):hover {
+    -webkit-animation: fadeIn_70_100 0.7s ease;
+    -moz-animation: fadeIn_70_100 0.7s ease;
+    animation: fadeIn_70_100 0.7s ease;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
+  side-menu .link.current-state {
+    opacity: 1; }
