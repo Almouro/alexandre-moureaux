@@ -3,7 +3,7 @@
   padding-bottom: 116px;
   min-height: 100%; }
 
-.snap-content {
+snap-content.snap-content {
   min-height: 100%;
   padding-bottom: 0; }
 
@@ -128,7 +128,8 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1em; }
 
-snap-content {
+.snap-content {
+  overflow: hidden;
   background-color: #DFE2DB; }
 
 .body {

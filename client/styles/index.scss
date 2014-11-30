@@ -15,8 +15,10 @@ body{
   font-size: 1em;
 }
 
-snap-content{
-	background-color: #DFE2DB;
+
+.snap-content{
+  overflow: hidden;
+  background-color: #DFE2DB;
 }
 
 .body{
