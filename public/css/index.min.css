@@ -129,7 +129,7 @@ body {
   font-size: 1em; }
 
 .snap-content {
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: #DFE2DB; }
 
 .body {
