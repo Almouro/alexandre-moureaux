@@ -32,14 +32,10 @@ h1{
 h2{
   font-size: 2.2em;
 }
-/* 
-h3{
-	font-size: 2.7em;
-}
 
-h4{
-	font-size: 2.3em;
-} */
+p{
+  font-size: 1.8em;
+}
 
 .central-container{
 	padding: 30px;
@@ -111,6 +107,7 @@ a, a:hover{
 
 .tech-used{
   font-size: 2em;
+  padding-bottom: 50px;
 
   @media screen and (max-width: 768px){
     text-align: center;
@@ -190,11 +187,11 @@ footer{
 }
 
 @media screen and (max-width: 768px){
-  @include sticky-footer(153px);
+  @include sticky-footer(122px);
 }
 
 @media screen and (min-width: 768px){
-  @include sticky-footer(158px);
+  @include sticky-footer(127px);
 }
 
 .not-sm-inline-block{

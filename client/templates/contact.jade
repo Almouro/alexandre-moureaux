@@ -1,3 +1,5 @@
+include ./includes/common.jade
+
 .jumbotron.header
   section.container
     h1 Contact
@@ -8,25 +10,25 @@
       .row.row-padding-bottom
         a(href="https://www.linkedin.com/in/alexandremoureaux/")
           .col-xs-2
-            img(src="assets/img/linkedin.png", alt="Linkedin")
+            img(src="#{IMG_DIR}/linkedin.png", alt="Linkedin")
           .col-xs-10.
             See my LinkedIn profile
       .row.row-padding-bottom
         a(href="skype:alexandre.moureaux?chat")
           .col-xs-2
-            img(src="assets/img/skype.png", alt="Skype")
+            img(src="#{IMG_DIR}/skype.png", alt="Skype")
           .col-xs-10.
             alexandre.moureaux
       .row.row-padding-bottom
         a(href="mailto:hi@alexandremoureaux.com")
           .col-xs-2
-            img(src="assets/img/emailcopy.png")
+            img(src="#{IMG_DIR}/emailcopy.png")
           .col-xs-10.
             Email me
-      //- .row.row-padding-bottom
-      //-   .col-xs-2
-      //-     a(href="mailto:hi@alexandremoureaux.com")
-      //-       img(src="assets/img/email.png", width="#{imageSize}", height="#{imageSize}")
-      //-   .col-xs-10.
-      //-     hi@alexandremoureaux.com
+      .row.row-padding-bottom
+        a(href="https://github.com/Almouro")
+          .col-xs-2
+            img(src="#{IMG_DIR}/github.png")
+          .col-xs-10.
+            Go to my GitHub Profile
 footer-almouro

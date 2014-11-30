@@ -127,14 +127,9 @@ h1 {
 h2 {
   font-size: 2.2em; }
 
-/* 
-h3{
-	font-size: 2.7em;
-}
+p {
+  font-size: 1.8em; }
 
-h4{
-	font-size: 2.3em;
-} */
 .central-container {
   padding: 30px;
   color: #555; }
@@ -186,7 +181,8 @@ a, a:hover {
     display: inline-block; }
 
 .tech-used {
-  font-size: 2em; }
+  font-size: 2em;
+  padding-bottom: 50px; }
   @media screen and (max-width: 768px) {
     .tech-used {
       text-align: center; } }
@@ -242,22 +238,22 @@ footer {
 @media screen and (max-width: 768px) {
   .footer-parent {
     position: relative;
-    padding-bottom: 153px;
+    padding-bottom: 122px;
     min-height: 100%; }
   footer, .footer {
     position: absolute;
     bottom: 0;
-    height: 153px; } }
+    height: 122px; } }
 
 @media screen and (min-width: 768px) {
   .footer-parent {
     position: relative;
-    padding-bottom: 158px;
+    padding-bottom: 127px;
     min-height: 100%; }
   footer, .footer {
     position: absolute;
     bottom: 0;
-    height: 158px; } }
+    height: 127px; } }
 
 @media screen and (max-width: 768px) {
   .not-sm-inline-block {
