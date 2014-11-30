@@ -1,18 +1,13 @@
-$footerHeight: 116px;
+@mixin sticky-footer($footerHeight){
+  .footer-parent{
+    position: relative;
+    padding-bottom: $footerHeight;
+    min-height: 100%;
+  }
 
-.footer-parent, [ui-view]{
-  position: relative;
-  padding-bottom: $footerHeight;
-  min-height: 100%;
-}
-
-snap-content.snap-content{
-  min-height: 100%;
-  padding-bottom: 0;
-}
-
-footer, .footer{
-  position: absolute;
-  bottom: 0;
-  height: $footerHeight;
+  footer, .footer{
+    position: absolute;
+    bottom: 0;
+    height: $footerHeight;
+  }
 }

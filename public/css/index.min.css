@@ -1,19 +1,5 @@
-.footer-parent, [ui-view] {
-  position: relative;
-  padding-bottom: 116px;
-  min-height: 100%; }
-
-snap-content.snap-content {
-  min-height: 100%;
-  padding-bottom: 0; }
-
-footer, .footer {
-  position: absolute;
-  bottom: 0;
-  height: 116px; }
-
 .snap-drawers {
-  background-color: #222222; }
+  background-color: #060606; }
 
 .snap-drawer {
   padding: 20px; }
@@ -156,9 +142,6 @@ h4{
 .jumbotron {
   margin-bottom: 0px; }
 
-.header.home {
-  min-height: 100%; }
-
 .header {
   background-color: #4393B9;
   color: white;
@@ -167,6 +150,10 @@ h4{
 @media screen and (max-width: 768px) {
   .header {
     padding-top: 70px; } }
+
+snap-content.snap-content {
+  min-height: 100%;
+  padding-bottom: 0; }
 
 .footer {
   color: white;
@@ -182,8 +169,21 @@ a, a:hover {
 .link {
   cursor: pointer; }
 
-.fonctions div {
-  display: inline-block; }
+.header.home {
+  min-height: 100%; }
+  .header.home .link {
+    opacity: 1; }
+  .header.home .link:not(.current-state):hover {
+    -webkit-animation: fadeIn_100_70 0.7s ease;
+    -moz-animation: fadeIn_100_70 0.7s ease;
+    animation: fadeIn_100_70 0.7s ease;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
+  .header.home .link.current-state {
+    opacity: 1; }
+  .header.home .fonctions div {
+    display: inline-block; }
 
 .tech-used {
   font-size: 2em; }
@@ -235,3 +235,33 @@ side-menu {
     animation-fill-mode: forwards; }
   side-menu .link.current-state {
     opacity: 1; }
+
+footer {
+  font-size: 1.4em; }
+
+@media screen and (max-width: 768px) {
+  .footer-parent {
+    position: relative;
+    padding-bottom: 153px;
+    min-height: 100%; }
+  footer, .footer {
+    position: absolute;
+    bottom: 0;
+    height: 153px; } }
+
+@media screen and (min-width: 768px) {
+  .footer-parent {
+    position: relative;
+    padding-bottom: 158px;
+    min-height: 100%; }
+  footer, .footer {
+    position: absolute;
+    bottom: 0;
+    height: 158px; } }
+
+@media screen and (max-width: 768px) {
+  .not-sm-inline-block {
+    display: block; } }
+@media screen and (min-width: 768px) {
+  .not-sm-inline-block {
+    display: inline-block; } }
