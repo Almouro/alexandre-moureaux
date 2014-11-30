@@ -13,12 +13,15 @@ var mainBowerFiles = require('main-bower-files');
 var uglify = require('gulp-uglify');
 var del = require('del');
 
+var BROWSER = "firefox";
+var URL = "http://localhost:5000";
+
 var PUBLIC_DIR = './public';
-var CLIENT_DIR = './client'
+var CLIENT_DIR = './client';
 
 var paths = {
   server: {
-    index: './app.js',
+    index: './server/app.js',
   },
   client: {
     watch:{
@@ -38,9 +41,6 @@ var paths = {
   }
 };
 
-var browser = "firefox";
-var url = "http://localhost:5000";
-
 gulp.task('clean', function(){
   del([paths.public.dir + '/**/*', '!'+ paths.public.dir +'/{assets,assets/**}'], function (err) {
     if(err) console.log(err);
@@ -50,7 +50,7 @@ gulp.task('clean', function(){
 gulp.task('browser-sync', function() {
     browserSync({
       files: paths.public.dir + "/**/*",
-      proxy: url
+      proxy: URL
     });
 });
 
@@ -103,7 +103,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('open', function(){
-  open(url, browser);
+  open(URL, BROWSER);
 });
 
 gulp.task('server', function(){

@@ -1,10 +1,10 @@
 {
   "name": "Alexandre-Moureaux",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Alexandre Moureaux Website",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node server/app.js"
   },
   "dependencies": {
     "express": "~4.9.x",
