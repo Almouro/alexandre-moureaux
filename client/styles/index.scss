@@ -6,12 +6,17 @@
 
 @import 'utils/snap-drawer.scss';
 
+.hidden{
+  display: none;
+}
+
 html{
 	min-height: 100%;
 	position: relative;
   padding: 0;
   margin: 0;
   font-size: 1em;
+  min-width: 270px;
 }
 
 body{
@@ -43,15 +48,17 @@ p{
 
 .central-container{
 	padding: 30px;
-	color: #555;
+	color: #333;
 }
 
 .jumbotron{
 	margin-bottom: 0px;
 }
 
+$header-color: #4393B9;
+
 .header{
-	background-color: #4393B9;
+	background-color: $header-color;
 	color: white;
 	text-align: center;
 }
@@ -93,13 +100,9 @@ a, a:hover{
     opacity: 1;
   }
 
-  .link:not(.current-state):hover{
+  .link:hover{
     @include animation(fadeIn_100_70 0.7s ease);
     @include animation-fill-mode(forwards);
-  }
-
-  .link.current-state{
-    opacity: 1;
   }
 
   .fonctions{
@@ -151,20 +154,43 @@ a, a:hover{
   }
 }
 
-burger{
-	color: white;
-  position: absolute;
+.navbar{
+  color: white;
   z-index: 1;
-  margin: 0 20px;
-  cursor: pointer;
-  font-size: 1.9em;
+  width: 100%;
+  padding: 0 20px;
+  position: absolute;
 
-  span{
-    vertical-align: middle;
+  @include mq-wide(){
+    padding: 0 70px;
   }
-  
-  .burger-icon{
-    font-size: 1.8em;
+
+  .home-button{
+    cursor: pointer;
+    font-size: 1.9em;
+    border: 4px solid white;
+    padding: 2px;
+    display: inline-block;
+    //TO DO: Correct this
+    margin-top: 12px;
+  }
+
+  .burger{
+    cursor: pointer;
+    font-size: 1.9em;
+
+    span{
+      vertical-align: middle;
+    }
+    
+    .burger-icon{
+      font-size: 1.8em;
+    }
+  }
+
+  .burger:hover span, .home-button:hover{
+    @include animation(fadeIn_100_70 0.7s ease);
+    @include animation-fill-mode(forwards);
   }
 }
 

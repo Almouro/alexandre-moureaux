@@ -15,9 +15,9 @@ html(lang="en", ng-app="almouro")
     include main/scripts.jade
 
   body(ng-controller='MainController')
-    snap-drawer
+    .snap-drawer(snap-drawer="right")
       side-menu
     snap-content.snap-content
-      burger(snap-toggle)
+      navbar
       .footer-parent(ui-view)
 

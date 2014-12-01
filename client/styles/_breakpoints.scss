@@ -55,3 +55,15 @@ $mq-static-breakpoint: desktop;
     @content;
   };
 }
+
+@mixin mq-desktop(){
+  @include mq(desktop, wide){
+    @content;
+  };
+}
+
+@mixin mq-wide(){
+  @include mq(wide){
+    @content;
+  };
+}

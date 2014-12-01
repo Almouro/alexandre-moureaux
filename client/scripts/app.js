@@ -79,12 +79,12 @@
   }]);
 
   app.config(['snapRemoteProvider', function(snapRemoteProvider) {
-    snapRemoteProvider.globalOptions.disable = 'right';
+    snapRemoteProvider.globalOptions.disable = 'left';
   }]);
 
-  app.directive('burger', function() {
+  app.directive('navbar', function() {
     return {
-      templateUrl: 'burger.html'
+      templateUrl: 'navbar.html'
     };
   });
 
