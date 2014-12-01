@@ -3,7 +3,7 @@
 (function(){
   var app = angular.module('almouro', ['mgcrea.ngStrap', 'ngAnimate', 'ui.router', 'snap']);
 
-  app.controller('MainController', function($scope, snapRemote, $rootScope, $timeout, $window){
+  app.controller('MainController', ['$scope', 'snapRemote', '$rootScope', '$timeout', '$window', function($scope, snapRemote, $rootScope, $timeout, $window){
     (function snapperHandler(){
       var ENTERING_PAGE_DURATION = 1200;
       var snapper;
@@ -38,32 +38,13 @@
         });
       });
     })();
-  });
+  }]);
 
-  app.controller('HomeController', function($scope){
-    $scope.tabs = [
-    {
-      "title": "Home",
-      "content": "Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica."
-    },
-    {
-      "title": "Profile",
-      "content": "Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee."
-    },
-    {
-      "title": "About",
-      "content": "Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade."
-    }
-    ];
-    $scope.tabs.activeTab = 0;
+  app.controller('HomeController', ['$scope', function($scope){
+    //
+  }]);
 
-    $scope.popover = {
-    "title": "Title",
-    "content": "Hello Popover<br />This is a multiline message!"
-    };
-  });
-
-  app.config(function($stateProvider, $urlRouterProvider) {
+  app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     //
     // For any unmatched url, redirect to /state1
     $urlRouterProvider.otherwise("/home");
@@ -95,11 +76,11 @@
         templateUrl: "about.html"
       });
 
-  });
+  }]);
 
-  app.config(function(snapRemoteProvider) {
+  app.config(['snapRemoteProvider', function(snapRemoteProvider) {
     snapRemoteProvider.globalOptions.disable = 'right';
-  });
+  }]);
 
   app.directive('burger', function() {
     return {
@@ -110,11 +91,11 @@
   app.directive('sideMenu', function() {
     return {
       templateUrl: 'side-menu.html',
-      controller: function($scope, $state){
+      controller: ['$scope', '$state', function($scope, $state){
           $scope.getState = function(){
             return $state.current.name;
           }
-        }
+        }]
     };
   });
 

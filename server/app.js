@@ -1,6 +1,8 @@
 var express = require('express')
 var app = express();
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 app.set('port', (process.env.PORT || 5000));
 app.set('appPath', require('path').normalize(__dirname + '/../public/'));
 app.set('views', __dirname + '/views');
