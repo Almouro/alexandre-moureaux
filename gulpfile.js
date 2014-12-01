@@ -3,7 +3,7 @@
 var gulp = require('gulp');
 var server = require('gulp-nodemon');
 var open = require('open');
-var sass = require('gulp-sass');
+var sass = require('gulp-ruby-sass');
 var jade = require('gulp-jade');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
@@ -56,7 +56,7 @@ gulp.task('browser-sync', function() {
 
 gulp.task('sass', function(done) {
   gulp.src(paths.client.sass)
-    .pipe(sass())
+    .pipe(sass({sourcemap: false}))
     /*.pipe(minifyCss({
       keepSpecialComments: 0
     }))*/

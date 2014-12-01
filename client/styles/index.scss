@@ -1,6 +1,10 @@
-@import 'utils/sticky-footer.scss';
+@import 'utils/sticky-footer';
+@import 'transitions';
+@import 'bootstrap';
+@import 'breakpoints';
+@import 'responsive-inlining';
+
 @import 'utils/snap-drawer.scss';
-@import 'transitions.scss';
 
 html{
 	min-height: 100%;
@@ -52,7 +56,7 @@ p{
 	text-align: center;
 }
 
-@media screen and (max-width: 768px){
+@include mq-until(tablet) {
   //Otherwise menu button will collapse with page title
   .header{
     padding-top: 70px;
@@ -109,11 +113,11 @@ a, a:hover{
   font-size: 2em;
   padding-bottom: 50px;
 
-  @media screen and (max-width: 768px){
+  @include mq-until(tablet) {
     text-align: center;
   }
 
-  @media screen and (min-width: 768px){
+  @include mq-from(tablet) {
     .tech-name{
       display: inline;
     }
@@ -124,7 +128,7 @@ a, a:hover{
   
   font-size: 2em;
 
-  @media screen and (max-width: 768px){
+  @include mq-until(tablet) {
     $imageSize: 48px;
     .row{
       line-height: $imageSize;
@@ -135,7 +139,7 @@ a, a:hover{
     }
   }
 
-  @media screen and (min-width: 768px){
+  @include mq-from(tablet) {
     $imageSize: 64px;
     .row{
       line-height: $imageSize;
@@ -186,20 +190,14 @@ footer{
   font-size: 1.4em;
 }
 
-@media screen and (max-width: 768px){
-  @include sticky-footer(122px);
+@include mq-xs(){
+  @include sticky-footer(153px);
 }
 
-@media screen and (min-width: 768px){
+@include mq-phone(){
   @include sticky-footer(127px);
 }
 
-.not-sm-inline-block{
-  @media screen and (max-width: 768px){
-    display: block;
-  }
-
-  @media screen and (min-width: 768px){
-    display: inline-block;
-  }
+@include mq-from(tablet){
+  @include sticky-footer(122px);
 }

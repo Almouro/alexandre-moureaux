@@ -1,12 +1,12 @@
 {
   "name": "Almouro",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/Almouro/alexandre-moureaux",
   "authors": [
     "Almouro <contact@almouro.com>"
   ],
   "description": "Personal Website",
-  "main": "app.js",
+  "main": "public/index.html",
   "keywords": [
     "Node",
     "Angular",
@@ -31,5 +31,10 @@
     "angular-ui-router": {
       "dependencies": null
     }
+  },
+  "devDependencies": {
+    "sass-mq": "~2.2.0",
+    "bourbon": "~3.2.3",
+    "bootstrap-sass-official": "~3.3.1"
   }
 }
