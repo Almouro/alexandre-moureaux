@@ -94,7 +94,7 @@
       controller: ['$scope', '$state', function($scope, $state){
           $scope.getState = function(){
             return $state.current.name;
-          }
+          };
         }]
     };
   });

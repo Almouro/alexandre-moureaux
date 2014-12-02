@@ -1,4 +1,4 @@
-var express = require('express')
+var express = require('express');
 var app = express();
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
@@ -11,5 +11,5 @@ app.use(express.static(app.get('appPath')));
 require('./routes')(app);
 
 app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
+  console.log("Node app is running at localhost:" + app.get('port'));
 });

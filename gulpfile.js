@@ -70,7 +70,7 @@ gulp.task('css', ['sass'], function(){
     .pipe(gulpif(IS_PROD,minifyCss({
       keepSpecialComments: 0
     })))
-    .pipe(gulp.dest(paths.public.css))
+    .pipe(gulp.dest(paths.public.css));
 });
 
 gulp.task('sass', function() {
