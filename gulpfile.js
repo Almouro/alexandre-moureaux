@@ -8,7 +8,6 @@ var jade = require('gulp-jade');
 var minifyCss = require('gulp-minify-css');
 //var rename = require('gulp-rename');
 var browserSync = require('browser-sync');
-var reload = browserSync.reload;
 var mainBowerFiles = require('main-bower-files');
 var uglify = require('gulp-uglify');
 var del = require('del');
